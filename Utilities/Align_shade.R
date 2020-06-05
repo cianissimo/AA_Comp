@@ -19,7 +19,7 @@ seq<-seq[-grep("X",seq)]
 
 mySelectSeq<-function(t,og,pass){
   
-  m<-as.matrix(t[which(t$pub_og_id==og & t$Seq.pass==pass),c("seq_seq","seq_id","Classification")])
+  m<-as.matrix(t[which(t$pub_og_id==og & t$Seq.pass==TRUE),c("seq_seq","seq_id","Classification")])
   s<-AAStringSet(m[,1])
   names(s)<-paste(m[,2],og,m[,3],sep="_")
   
